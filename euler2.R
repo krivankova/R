@@ -8,7 +8,7 @@ e_n<-rep(1,times=n)   #jednièový vektor
 e_k<-rep(1,times=k)   #jednièový vektor
 x0<-c(t(data[1,])) #posledni pozorovane hodnoty cen akcií
 h<-0.001      #èasový krok
-w<-rnorm(n*k,0,h)     #vektor pøírùstkù Wienerova procesu
+w<-rnorm(n*k,0,sqrt(h))     #vektor pøírùstkù Wienerova procesu
 W<-matrix(w,n,k)      #matice pøírùstkù Wienerova procesu
 i<-0          #index
 xi<-x0        #i-tá iterace

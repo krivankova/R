@@ -6,8 +6,8 @@ N<-500        #počet simulací
 e_n<-rep(1,times=n)   #jedničový vektor
 e_k<-rep(1,times=k)   #jedničový vektor
 #r0<-c(t(data[1,])) #posledni pozorovane hodnoty cen akcií
-h<-0.001      #časový krok
-w_r<-rnorm(N,0,h)     #vektor přírůstků Wienerova procesu
+h<-1      #časový krok
+w_r<-rnorm(N,0,sqrt(h))     #vektor přírůstků Wienerova procesu
 i<-0          #index
 kappa<-1  #rychlost reverze
 mu_r<-0.02 #hodnota rovnovažné polohy
@@ -23,4 +23,4 @@ for (i in 1:N){        #cyklus iterací numerické metody
 }
 
 t<-seq(from=0, by=h, length=N+1)
-plot (t, r, type = "l", lty = 1, xlab = "t", ylab = "r(t)", main = "rate of return")
+plot (t, r, type = "l", lty = 1, xlab = "t", ylab = "r(t)", main = "return of market")
