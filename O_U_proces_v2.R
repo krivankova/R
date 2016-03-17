@@ -10,8 +10,8 @@ h<-1      #časový krok
 w_r<-rnorm(N,0,sqrt(h))     #vektor přírůstků Wienerova procesu
 i<-0          #index
 kappa<-1  #rychlost reverze
-mu_r<-0.02 #hodnota rovnovažné polohy
-sigma_r<-0.02 #volatilita v Ornstein–Uhlenbeckově procesu
+mu_r<-0.02/250 #hodnota rovnovažné polohy
+sigma_r<-0.02/250 #volatilita v Ornstein–Uhlenbeckově procesu
 r0<-mu_r #pocatecni iterace, zatim jen pomocna
 ri<-r0        #i-tá iterace
 r<-r0        #vektor iterací

@@ -8,13 +8,18 @@ cetv <- scan(file="D:/Dizertace/R/data/cetv.csv", sep=";", what=numeric(), dec="
 nwr <- scan(file="D:/Dizertace/R/data/NWR.csv", sep=";", what=numeric(), dec=",")
 
 
-data<-cbind(cez,o2,kb,pm,pegas,cetv,nwr)
+#data<-cbind(cez,o2,kb,pm,pegas,cetv,nwr)
+data<-cbind(rev(cez),rev(o2),rev(kb),rev(pm),rev(pegas),rev(cetv),rev(nwr))
 
 cov<-cov(data)
 #save(cov, file="cov.txt") #pokus o ulozeni kovariancni matice
 
 P1<-data[1:n-1,]
 P0<-data[2:n,]
-r<-(P1-P0)/P0    #relativní výnosnost spoèítaná z ceny
-rcov<-cov(r)     #kovarianèní matice výnosností
-mcov<-mean(r) 
+rr<-(P1-P0)/P0    #relativní výnosnost spoèítaná z ceny
+rcov<-cov(rr)     #kovarianèní matice výnosností
+
+#rmean<-mean(rr[,1])
+#for (i in 2:7){rmean<-cbind(rmean,mean(rr[,i]))}
+
+#rmeanall<-mean(rmean)
