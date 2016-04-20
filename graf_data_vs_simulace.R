@@ -20,6 +20,8 @@ tt<-seq(from=1, by=1, length=n)
 matplot (tt, data, type = "l", lty = 1, # ylim=c(0, 15000), 
          xlab = "t", ylab = "P(t)", main = "price of asset")
 
+matplot (tt, data/(data%*%e_k%*%e_k), type = "l", lty = 1, #xlim=c(0, 300), 
+         xlab = "t", ylab = "X(t)", main = "weight of asset")
 
 
 matplot (c(t,tt+N),t(cbind(t(data),x)), type = "l", lty = 1, # ylim=c(0, 15000), 
@@ -33,3 +35,5 @@ plot (c(t,tt+N), cbind(t(data),x)[5, ], type = "l", lty = 1, xlab = "t", ylab = 
 plot (c(t,tt+N), cbind(t(data),x)[6, ], type = "l", lty = 1, xlab = "t", ylab = "P(t)", main = "CT")
 plot (c(t,tt+N), cbind(t(data),x)[7, ], type = "l", lty = 1, xlab = "t", ylab = "P(t)", main = "NWR")
 
+matplot (c(t,tt+N),t(cbind(t(data/(data%*%e_k%*%e_k)),vahy)), type = "l", lty = 1, #xlim=c(0, 300), 
+         xlab = "t", ylab = "X(t)", main = "weight of asset")
