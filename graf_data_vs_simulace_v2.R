@@ -1,8 +1,7 @@
 #===================================================================================
 #Data
 
-date <- rev(scan(file="D:/Dizertace/R/data/date.csv", sep=";", what=date(), dec=","))
-#date <- rev(scan(file="U:/R/data/date.csv", sep=";", what=date(), dec=","))
+date <- rev(scan(file="U:/R/data/date.csv", sep=";", what=date(), dec=","))
 date <- as.Date(date, "%d.%m.%Y") 
 #date2 <- bizseq("2011-01-31", "2014-02-21",Calendar(holidaysANBIMA, weekdays=c("saturday", "sunday")))
 
@@ -18,7 +17,7 @@ matplot (date, data[,3:4], type = "l", lty = 1, xaxt="n", col=c(3:4),# axes=FALS
 #axis(2, las=2)
 axis.Date(side = 1, date)
 #axis.Date(side = 1, date, format = "%d/%m/%Y", las = 2)
-legend(date[1],max(c(data[,3:4])), c("KB", "PM"), col=c(3:4), lty=1,  box.lty=0)
+legend(date[650],min(c(data[,4])), c("KB", "PM"), col=c(3:4), lty=1,  box.lty=0)
 
 matplot (date, data[,c(1,2,5,6,7)], type = "l", lty = 1, xaxt="n", col=c(1,2,5,6,7),# axes=FALSE, # ylim=c(0, 15000), 
          xlab = "t", ylab = "P(t)", main = "price of asset")
@@ -77,7 +76,7 @@ abline (v = dates[1], lty = 2)
 matplot (c(date,dates), t(cbind(t(data[,3:4]),x[3:4,])), type = "l", lty = 1, xaxt="n", col=c(3:4),# axes=FALSE, # ylim=c(0, 15000), 
          xlab = "t", ylab = "P(t)", main = "price of asset")
 axis.Date(side = 1, date)
-legend(date[1],max(c(t(cbind(t(data[,3:4]),x[3:4,])))), c("KB", "PM"), col=c(3:4), lty=1,  box.lty=0)
+legend(dates[300],min(c(t(cbind(t(data[,4]),x[4,])))), c("KB", "PM"), col=c(3:4), lty=1,  box.lty=0)
 abline (v = dates[1], lty = 2)
 
 matplot (c(date,dates), t(cbind(t(data[,c(1,2,5,6,7)]),x[c(1,2,5,6,7),])), type = "l", lty = 1, xaxt="n", col=c(1,2,5,6,7),# axes=FALSE, # ylim=c(0, 15000), 
@@ -104,4 +103,5 @@ abline (v = dates[1], lty = 2)
 matplot (c(date,dates),t(cbind(t(data/(data%*%e_k%*%e_k)),vahy)), type = "l", lty = 1, xaxt="n", #xlim=c(0, 300), 
          xlab = "t", ylab = "X(t)", main = "weight of asset")
 axis.Date(side = 1, dates)
+legend(dates[300],0.6, c("CEZ", "O2","KB", "PM", "Pegas", "CT", "NWR"), col=1:7, lty=1,  box.lty=0)
 abline (v = dates[1], lty = 2)
