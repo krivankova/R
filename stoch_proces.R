@@ -40,8 +40,12 @@ t <- seq (0, 1, by=dt)
 
 W1 <- generuj.Wp (t, dt, W0)
 W2 <- generuj.Wp (t, dt, W0)
+W3 <- generuj.Wp (t, dt, W0)
 
 plot (W1, W2, type = "l", col = "black", cex.lab=0.75, cex.axis=0.75, xlab = expression(W[1](t)), ylab = expression(W[2](t)))
+
+points3D (W1[1:100], W2[1:100], W3[1:100], col = "red", phi = 20, theta = 20, xlab = expression(W[1](t)), ylab = expression(W[2](t)), zlab = expression(W[3](t)))
+
 
 # =============================================================================
 # =============================================================================
