@@ -55,7 +55,7 @@ plot (t, r, type = "l", lty = 1, xlab = "t", ylab = "r(t)", main = "return of ma
 matplot (t, cbind(x[1, ], xm[1, ]), type = "l", lty = 1, xlab = "t", ylab = "P(t)", main = "CEZ")
 legend(t[420],(mean(xm[1,])), c("Euler", "Milstein"), col=c(1:2), lty=1,  box.lty=0)
 matplot (t, cbind(x[2, ], xm[2, ]), type = "l", lty = 1, xlab = "t", ylab = "P(t)", main = "O2")
-legend(t[420],(mean(xm[2,])), c("Euler", "Milstein"), col=c(1:2), lty=1,  box.lty=0)
+legend(t[320],(mean(xm[2,])+40), c("Eulerova metoda", "Milsteinova metoda"), col=c(1:2), lty=1,  box.lty=0)
 matplot (t, cbind(x[3, ], xm[3, ]), type = "l", lty = 1, xlab = "t", ylab = "P(t)", main = "KB")
 legend(t[420],(mean(xm[3,])), c("Euler", "Milstein"), col=c(1:2), lty=1,  box.lty=0)
 matplot (t, cbind(x[4, ], xm[4, ]), type = "l", lty = 1, xlab = "t", ylab = "P(t)", main = "PM")
