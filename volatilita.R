@@ -8,4 +8,5 @@ L<-diag(l)
 #rozklad matice  P%*%L%*%t(P)
 sl<-sqrt(l) 
 sL<-diag(sl)
-vol<-P%*%sL
+vol<-P%*%sL 
+#rozklad matice sigma=rcov=cov(rr)=vol%*%t(vol)
